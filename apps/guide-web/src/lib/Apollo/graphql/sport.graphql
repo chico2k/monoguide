@@ -1,0 +1,42 @@
+mutation createSport($level: Int!, $sportRefId: Int!) {
+  createSport(data: { level: $level, sportRefId: $sportRefId }) {
+    id
+    level
+    sportRef {
+      title
+      id
+    }
+  }
+}
+
+mutation updateSport($level: Int!, $sportId: Int!) {
+  updateSport(data: { level: $level, sportId: $sportId }) {
+    id
+    level
+    sportRef {
+      id
+      title
+    }
+  }
+}
+
+mutation deleteSport($sportId: Int!) {
+  deleteSport(sportId: $sportId)
+}
+
+query getSportRefList {
+  getSportRefList {
+    title
+    id
+  }
+}
+query getSportDetail($sportId: Int!) {
+  getSportDetail(sportId: $sportId) {
+    id
+    level
+    sportRef {
+      id
+      title
+    }
+  }
+}

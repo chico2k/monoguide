@@ -1,0 +1,190 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  // shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+
+
+}
+
+model Image {
+  id             Int       @id @default(autoincrement())
+  orderNumber    Int?      @default(0) @map("mapbox_id")
+  url            String?
+  blurBase64     String?   @map("blur_base64")
+  fileName       String?
+  caption        String?   @db.VarChar(255)
+  origin         String    @db.VarChar(255)
+  isProfileImage Boolean   @map("is_profile_image")
+  isPublished    Boolean   @default(true) @map("is_published")
+  userId         String    @map("user_id") @db.VarChar(255)
+  locationId     Int?
+  location       Location? @relation(fields: [locationId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamp(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamp(3)
+}
+
+model Location {
+  id               Int     @id @default(autoincrement())
+  mapboxId         String  @map("mapbox_id") @db.VarChar(255)
+  placeName        String  @map("place_name") @db.VarChar(255)
+  placeType        String  @map("place_type") @db.VarChar(255)
+  coordinates      String  @db.VarChar(255)
+  text             String  @db.VarChar(255)
+  regionId         String? @map("region_id") @db.VarChar(255)
+  regionText       String? @map("region_text") @db.VarChar(255)
+  regionWikidata   String? @map("region_wikidata") @db.VarChar(255)
+  regionShortcode  String? @map("region_short_code") @db.VarChar(255)
+  countryId        String? @map("country_id") @db.VarChar(255)
+  countryText      String? @map("country_text") @db.VarChar(255)
+  countryWikidata  String? @map("country_wikidata") @db.VarChar(255)
+  countryShortcode String? @map("country_short_code") @db.VarChar(255)
+  postcodeId       String? @map("postcode_id") @db.VarChar(255)
+  postcodeText     String? @map("postcode_text") @db.VarChar(255)
+  placeId          String? @map("place_id") @db.VarChar(255)
+  placeWikidata    String? @map("place_wikidata") @db.VarChar(255)
+  placeText        String? @map("place_text") @db.VarChar(255)
+  userId           String  @map("user_id") @db.VarChar(255)
+  image            Image[]
+  user             User    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamp(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamp(3)
+}
+
+model Review {
+  id              Int              @id @default(autoincrement())
+  title           String           @db.VarChar(255)
+  text            String           @db.VarChar(4000)
+  rating          Int
+  isPublished     Boolean          @default(true) @map("is_published")
+  userId          String           @map("user_id") @db.VarChar(255)
+  authorId        String           @map("author_id") @db.VarChar(255)
+  author          User             @relation("review_author_id", fields: [authorId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  user            User             @relation("review_user_id", fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  review_response ReviewResponse[]
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamp(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamp(3)
+}
+
+model ReviewResponse {
+  id          Int     @id @default(autoincrement())
+  text        String  @db.VarChar(4000)
+  isPublished Boolean @default(true) @map("is_published")
+
+  authorId String @map("author_id") @db.VarChar(255)
+  reviewId Int    @map("review_id")
+  user     User   @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  review   Review @relation(fields: [reviewId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamp(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamp(3)
+}
+
+model Sport {
+  id         Int      @id @default(autoincrement())
+  level      Int
+  userId     String   @map("user_id") @db.VarChar(255)
+  sportRefId Int      @map("sport_ref_id")
+  sportRef   SportRef @relation(fields: [sportRefId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamp(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamp(3)
+}
+
+model SportRef {
+  id    Int     @id @default(autoincrement())
+  title String  @db.VarChar(255)
+  sport Sport[]
+
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamp(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamp(3)
+}
+
+model TagRef {
+  id   Int    @id @default(autoincrement())
+  text String @db.VarChar(4000)
+  tag  Tag[]
+
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamp(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamp(3)
+}
+
+model Tag {
+  id       Int    @id @default(autoincrement())
+  userId   String @map("user_id") @db.VarChar(255)
+  tagRefId Int    @map("tag_ref_id")
+  tagRef   TagRef @relation(fields: [tagRefId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamp(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamp(3)
+}
+
+model User {
+  id             String           @id @db.VarChar(255)
+  firstName      String           @map("first_name") @db.VarChar(255)
+  lastName       String           @map("last_name") @db.VarChar(255)
+  username       String           @unique(map: "user_username_unique") @db.VarChar(255)
+  isBlacklisted  Boolean          @default(false) @map("is_backlisted")
+  isGuide        Boolean          @default(false) @map("is_guide")
+  image          Image[]
+  location       Location[]
+  reviewAuthor   Review[]         @relation("review_author_id")
+  reviewUser     Review[]         @relation("review_user_id")
+  reviewResponse ReviewResponse[]
+  sport          Sport[]
+  tag            Tag[]
+  reviewMeta     ReviewMeta[]
+  vita           Vita[]
+
+
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamp(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamp(3)
+}
+
+model ReviewMeta {
+  id            Int    @id @default(autoincrement())
+  averageRating Float  @default(0) @map("average_rating")
+  numberRating  Int    @default(0) @map("number_rating")
+  userId        String @unique @map("user_id") @db.VarChar(255)
+  user          User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamp(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamp(3)
+
+}
+
+model Vita {
+  id          Int       @id @default(autoincrement())
+  title       String    @db.VarChar(200)
+  text        String    @db.VarChar(4000)
+  fromDate    DateTime  @map("from_date") @db.Date
+  toDate      DateTime? @map("to_date") @db.Date
+  isCurrent   Boolean   @default(true) @map("is_current")
+  isPublished Boolean   @default(true) @map("is_published")
+  userId      String    @map("user_id") @db.VarChar(255)
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamp(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamp(3)
+}

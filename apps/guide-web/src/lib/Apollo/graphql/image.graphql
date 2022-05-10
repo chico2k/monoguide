@@ -1,0 +1,55 @@
+query getUploadImageList($username: String!, $limit: Int!, $cursor: String) {
+  getUploadImageList(username: $username, limit: $limit, cursor: $cursor) {
+    pageInfo {
+      cursor
+      lastPage
+      nextPage
+    }
+    hits {
+      hits {
+        _id
+        _source {
+          id
+          url
+          blurBase64
+          caption
+          orderNumber
+          fileName
+          origin
+          isProfileImage
+          location {
+            placeName
+            text
+          }
+        }
+      }
+    }
+  }
+}
+
+mutation getUploadImageDetail($id: Float!) {
+  getUploadImageDetail(id: $id) {
+    pageInfo {
+      cursor
+    }
+    hits {
+      hits {
+        _id
+        _source {
+          id
+          url
+          blurBase64
+          caption
+          orderNumber
+          fileName
+          origin
+          isProfileImage
+          location {
+            placeName
+            text
+          }
+        }
+      }
+    }
+  }
+}

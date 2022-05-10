@@ -1,0 +1,16 @@
+{
+  "name": "@sportsguide/lib",
+  "description": "Lib for Sportsguide",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "author": "Mario Galla",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn tsc"
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+    "winston": "^3.3.3"
+  }
+}

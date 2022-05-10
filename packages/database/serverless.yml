@@ -1,0 +1,33 @@
+service: data-layer
+frameworkVersion: '2.64'
+useDotenv: true
+variablesResolutionMode: 20210326
+configValidationMode: error
+
+custom:
+    stage: ${opt:stage, self:provider.stage}
+
+provider:
+    name: aws
+    region: us-east-1
+    stage: dev
+    runtime: nodejs14.x
+    lambdaHashingVersion: 20201221
+    environment:
+
+layers:
+    Database:
+        path: ./lambda-layers-database
+        name: database-${self:custom.stage}
+        description: 'Database dependencies'
+        compatibleRuntimes:
+            - nodejs14.x
+        retain: false
+
+resources:
+    Outputs:
+        DatabaseLayerExport:
+            Value:
+                Ref: DatabaseLambdaLayer
+            Export:
+                Name: DatabaseLambdaLayer-${self:custom.stage}

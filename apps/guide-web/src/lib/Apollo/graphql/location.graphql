@@ -1,0 +1,34 @@
+mutation createLocation($data: LocationMapBoxInput!) {
+  createLocation(data: $data) {
+    id
+    coordinates
+    placeName
+    placeType
+    regionId
+    regionText
+    countryId
+    countryText
+    text
+  }
+}
+
+mutation getLocation($value: String!) {
+  getLocation(value: $value) {
+    id
+    type
+    place_type
+    text
+    bbox
+    place_name
+    geometry {
+      type
+      coordinates
+    }
+    context {
+      id
+      short_code
+      wikidata
+      text
+    }
+  }
+}

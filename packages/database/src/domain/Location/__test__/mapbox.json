@@ -1,0 +1,682 @@
+[
+  {
+    "id": "address.6260737639207990",
+    "type": "Feature",
+    "place_type": ["address"],
+    "relevance": 1,
+    "properties": {
+      "accuracy": "street"
+    },
+    "text": "Traunreuter Straße",
+    "place_name": "Traunreuter Straße, 83349 Palling, Germany",
+    "center": [12.6355723, 47.9982301],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [12.6355723, 47.9982301]
+    },
+    "context": [
+      {
+        "id": "postcode.10127545138159290",
+        "text": "83349"
+      },
+      {
+        "id": "place.10127545138808750",
+        "wikidata": "Q262325",
+        "text": "Palling"
+      },
+      {
+        "id": "region.7718916604336910",
+        "wikidata": "Q980",
+        "short_code": "DE-BY",
+        "text": "Bavaria"
+      },
+      {
+        "id": "country.11437281100480410",
+        "wikidata": "Q183",
+        "short_code": "de",
+        "text": "Germany"
+      }
+    ]
+  },
+  {
+    "id": "place.8366109811859780",
+    "type": "Feature",
+    "place_type": ["place"],
+    "relevance": 1,
+    "properties": {
+      "wikidata": "Q1726"
+    },
+    "text": "München",
+    "place_name": "München, Bavaria, Germany",
+    "matching_text": "Munich",
+    "matching_place_name": "Munich, Bavaria, Germany",
+    "bbox": [11.360781, 48.061596, 11.722879, 48.248216],
+    "center": [11.56667, 48.13333],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [11.56667, 48.13333]
+    },
+    "context": [
+      {
+        "id": "region.7718916604336910",
+        "wikidata": "Q980",
+        "short_code": "DE-BY",
+        "text": "Bavaria"
+      },
+      {
+        "id": "country.11437281100480410",
+        "wikidata": "Q183",
+        "short_code": "de",
+        "text": "Germany"
+      }
+    ]
+  },
+  {
+    "id": "poi.300647769085",
+    "type": "Feature",
+    "place_type": ["poi"],
+    "relevance": 1,
+    "properties": {
+      "foursquare": "4ba1e186f964a5205bd037e3",
+      "landmark": true,
+      "address": "Playfair St.",
+      "category": "brewery, beer, craft"
+    },
+    "text": "Munich Brauhaus",
+    "place_name": "Munich Brauhaus, Playfair St., Sydney, New South Wales 2000, Australia",
+    "center": [151.208144, -33.859006],
+    "geometry": {
+      "coordinates": [151.208144, -33.859006],
+      "type": "Point"
+    },
+    "context": [
+      {
+        "id": "postcode.12083970905392900",
+        "text": "2000"
+      },
+      {
+        "id": "locality.12323480988349200",
+        "wikidata": "Q14210737",
+        "text": "The Rocks"
+      },
+      {
+        "id": "place.4960085988742460",
+        "wikidata": "Q3130",
+        "text": "Sydney"
+      },
+      {
+        "id": "region.19913417492553050",
+        "wikidata": "Q3224",
+        "short_code": "AU-NSW",
+        "text": "New South Wales"
+      },
+      {
+        "id": "country.9968792518346070",
+        "wikidata": "Q408",
+        "short_code": "au",
+        "text": "Australia"
+      }
+    ]
+  },
+  {
+    "id": "poi.420906854884",
+    "type": "Feature",
+    "place_type": ["poi"],
+    "relevance": 1,
+    "properties": {
+      "foursquare": "53f4824b498e6508f945e156",
+      "landmark": true,
+      "address": "45 South Wharf Promenade",
+      "category": "bar, alcohol",
+      "maki": "bar"
+    },
+    "text": "Munich Brauhaus",
+    "place_name": "Munich Brauhaus, 45 South Wharf Promenade, Melbourne, Victoria 3006, Australia",
+    "center": [144.950375, -37.824171],
+    "geometry": {
+      "coordinates": [144.950375, -37.824171],
+      "type": "Point"
+    },
+    "context": [
+      {
+        "id": "postcode.10913150706622350",
+        "text": "3006"
+      },
+      {
+        "id": "locality.11716172712494050",
+        "wikidata": "Q12069696",
+        "text": "South Wharf"
+      },
+      {
+        "id": "place.7068896531111320",
+        "wikidata": "Q3141",
+        "text": "Melbourne"
+      },
+      {
+        "id": "region.10151275538899450",
+        "wikidata": "Q36687",
+        "short_code": "AU-VIC",
+        "text": "Victoria"
+      },
+      {
+        "id": "country.9968792518346070",
+        "wikidata": "Q408",
+        "short_code": "au",
+        "text": "Australia"
+      }
+    ]
+  },
+  {
+    "id": "poi.962072705287",
+    "type": "Feature",
+    "place_type": ["poi"],
+    "relevance": 1,
+    "properties": {
+      "foursquare": "4b73be29f964a52047ba2de3",
+      "landmark": true,
+      "address": "Berliner Str. 93",
+      "category": "hotel, motel, tourism, lodging"
+    },
+    "text": "Munich Marriott Hotel",
+    "place_name": "Munich Marriott Hotel, Berliner Str. 93, München, Bavaria 80805, Germany",
+    "center": [11.593291, 48.174974],
+    "geometry": {
+      "coordinates": [11.593291, 48.174974],
+      "type": "Point"
+    },
+    "context": [
+      {
+        "id": "postcode.11602845291057420",
+        "text": "80805"
+      },
+      {
+        "id": "locality.11470848088716920",
+        "text": "Alte Heide-Hirschau"
+      },
+      {
+        "id": "place.8366109811859780",
+        "wikidata": "Q1726",
+        "text": "München"
+      },
+      {
+        "id": "region.7718916604336910",
+        "wikidata": "Q980",
+        "short_code": "DE-BY",
+        "text": "Bavaria"
+      },
+      {
+        "id": "country.11437281100480410",
+        "wikidata": "Q183",
+        "short_code": "de",
+        "text": "Germany"
+      }
+    ]
+  },
+  {
+    "id": "poi.635655173784",
+    "type": "Feature",
+    "place_type": ["poi"],
+    "relevance": 1,
+    "properties": {
+      "foursquare": "4b4e26e3f964a5201ae326e3",
+      "landmark": true,
+      "address": "13 Center St",
+      "category": "biergarten, brewery, beer, bar, alcohol"
+    },
+    "text": "Munich Haus",
+    "place_name": "Munich Haus, 13 Center St, Chicopee, Massachusetts 01013, United States",
+    "center": [-72.606883, 42.147936],
+    "geometry": {
+      "coordinates": [-72.606883, 42.147936],
+      "type": "Point"
+    },
+    "context": [
+      {
+        "id": "neighborhood.15533428102618680",
+        "text": "Sandy Hill"
+      },
+      {
+        "id": "postcode.11778961785770820",
+        "text": "01013"
+      },
+      {
+        "id": "place.13497018888639820",
+        "wikidata": "Q1650454",
+        "text": "Chicopee"
+      },
+      {
+        "id": "district.11012232071070350",
+        "wikidata": "Q54160",
+        "text": "Hampden County"
+      },
+      {
+        "id": "region.8307399429561540",
+        "wikidata": "Q771",
+        "short_code": "US-MA",
+        "text": "Massachusetts"
+      },
+      {
+        "id": "country.19678805456372290",
+        "wikidata": "Q30",
+        "short_code": "us",
+        "text": "United States"
+      }
+    ]
+  },
+  {
+    "id": "poi.824633740218",
+    "type": "Feature",
+    "place_type": ["poi"],
+    "relevance": 1,
+    "properties": {
+      "foursquare": "4f1bc5a1e4b0817d3d160f43",
+      "landmark": true,
+      "category": "hotel, motel, tourism, lodging"
+    },
+    "text": "Main Pool@Alila Villas",
+    "place_name": "Main Pool@Alila Villas, Badung, Bali 80361, Indonesia",
+    "matching_text": "Uluwatu",
+    "matching_place_name": "Uluwatu, Badung, Bali 80361, Indonesia",
+    "center": [115.137312, -8.846402],
+    "geometry": {
+      "coordinates": [115.137312, -8.846402],
+      "type": "Point"
+    },
+    "context": [
+      {
+        "id": "neighborhood.12216871092858510",
+        "wikidata": "Q26751682",
+        "text": "Pecatu"
+      },
+      {
+        "id": "postcode.12496051399879200",
+        "text": "80361"
+      },
+      {
+        "id": "locality.11119517543732700",
+        "text": "Kuta Selatan"
+      },
+      {
+        "id": "place.13605791678589480",
+        "wikidata": "Q11482",
+        "text": "Badung"
+      },
+      {
+        "id": "region.9012896814698400",
+        "wikidata": "Q4648",
+        "text": "Bali"
+      },
+      {
+        "id": "country.12065990263114360",
+        "wikidata": "Q252",
+        "short_code": "id",
+        "text": "Indonesia"
+      }
+    ]
+  },
+  {
+    "id": "poi.17179974963",
+    "type": "Feature",
+    "place_type": ["poi"],
+    "relevance": 1,
+    "properties": {
+      "foursquare": "4f7fe7c2e4b00d7481375af6",
+      "landmark": true,
+      "address": "Jl. Uluwatu No.48 Kedonganan",
+      "category": "bicycle, bike, cycle, shop"
+    },
+    "text": "Uluwatu Motor AHASS 12991",
+    "place_name": "Uluwatu Motor AHASS 12991, Jl. Uluwatu No.48 Kedonganan, Badung, Bali 80361, Indonesia",
+    "center": [115.175225, -8.763595],
+    "geometry": {
+      "coordinates": [115.175225, -8.763595],
+      "type": "Point"
+    },
+    "context": [
+      {
+        "id": "neighborhood.2436607025265470",
+        "text": "Kedonganan"
+      },
+      {
+        "id": "postcode.12496051399879200",
+        "text": "80361"
+      },
+      {
+        "id": "locality.13075022650698260",
+        "wikidata": "Q994499",
+        "text": "Kuta"
+      },
+      {
+        "id": "place.13605791678589480",
+        "wikidata": "Q11482",
+        "text": "Badung"
+      },
+      {
+        "id": "region.9012896814698400",
+        "wikidata": "Q4648",
+        "text": "Bali"
+      },
+      {
+        "id": "country.12065990263114360",
+        "wikidata": "Q252",
+        "short_code": "id",
+        "text": "Indonesia"
+      }
+    ]
+  },
+  {
+    "id": "poi.472446468993",
+    "type": "Feature",
+    "place_type": ["poi"],
+    "relevance": 1,
+    "properties": {
+      "foursquare": "5820bcd3c30e677f6ba99cc0",
+      "landmark": true,
+      "address": "Anexartisias, 10",
+      "category": "cafe, coffee, tea, tea house",
+      "maki": "cafe"
+    },
+    "text": "Uluwatu Specialty Coffees",
+    "place_name": "Uluwatu Specialty Coffees, Anexartisias, 10, Λεμεσός, Limassol 3036, Cyprus",
+    "center": [33.046504, 34.675254],
+    "geometry": {
+      "coordinates": [33.046504, 34.675254],
+      "type": "Point"
+    },
+    "context": [
+      {
+        "id": "postcode.9236846724248080",
+        "text": "3036"
+      },
+      {
+        "id": "place.15713783171836550",
+        "wikidata": "Q185632",
+        "text": "Λεμεσός"
+      },
+      {
+        "id": "region.548099440374850",
+        "wikidata": "Q59150",
+        "short_code": "CY-02",
+        "text": "Limassol"
+      },
+      {
+        "id": "country.6480326808612720",
+        "wikidata": "Q229",
+        "short_code": "cy",
+        "text": "Cyprus"
+      }
+    ]
+  },
+  {
+    "id": "poi.987842489558",
+    "type": "Feature",
+    "place_type": ["poi"],
+    "relevance": 1,
+    "properties": {
+      "foursquare": "4c5f215c54ac0f4751adb221",
+      "landmark": true,
+      "category": "nightclub, club, night club, disco"
+    },
+    "text": "Uluwatu Lounge",
+    "place_name": "Uluwatu Lounge, Matosinhos, Porto 4450-718, Portugal",
+    "center": [-8.706147, 41.191342],
+    "geometry": {
+      "coordinates": [-8.706147, 41.191342],
+      "type": "Point"
+    },
+    "context": [
+      {
+        "id": "postcode.10541469645762730",
+        "text": "4450-718"
+      },
+      {
+        "id": "place.5467253443729530",
+        "wikidata": "Q3349324",
+        "text": "Matosinhos"
+      },
+      {
+        "id": "region.12578166981213680",
+        "wikidata": "Q36433",
+        "text": "Porto"
+      },
+      {
+        "id": "country.8463333744527380",
+        "wikidata": "Q45",
+        "short_code": "pt",
+        "text": "Portugal"
+      }
+    ]
+  },
+  {
+    "id": "poi.798863931474",
+    "type": "Feature",
+    "place_type": ["poi"],
+    "relevance": 1,
+    "properties": {
+      "foursquare": "4bf8f8f08d30d13ad4910118",
+      "landmark": true,
+      "address": "Jl. Pantai Suluban",
+      "category": "hotel resort, resort, lodging"
+    },
+    "text": "Uluwatu Surf Villas",
+    "place_name": "Uluwatu Surf Villas, Jl. Pantai Suluban, Badung, Bali 80361, Indonesia",
+    "center": [115.087424, -8.818704],
+    "geometry": {
+      "coordinates": [115.087424, -8.818704],
+      "type": "Point"
+    },
+    "context": [
+      {
+        "id": "neighborhood.12216871092858510",
+        "wikidata": "Q26751682",
+        "text": "Pecatu"
+      },
+      {
+        "id": "postcode.12496051399879200",
+        "text": "80361"
+      },
+      {
+        "id": "locality.11119517543732700",
+        "text": "Kuta Selatan"
+      },
+      {
+        "id": "place.13605791678589480",
+        "wikidata": "Q11482",
+        "text": "Badung"
+      },
+      {
+        "id": "region.9012896814698400",
+        "wikidata": "Q4648",
+        "text": "Bali"
+      },
+      {
+        "id": "country.12065990263114360",
+        "wikidata": "Q252",
+        "short_code": "id",
+        "text": "Indonesia"
+      }
+    ]
+  },
+  {
+    "id": "place.13229035407559250",
+    "type": "Feature",
+    "place_type": ["place"],
+    "relevance": 1,
+    "properties": {
+      "wikidata": "Q62"
+    },
+    "text": "San Francisco",
+    "place_name": "San Francisco, California, United States",
+    "bbox": [-122.517689744, 37.604479177, -122.354986188, 37.832428947],
+    "center": [-122.463, 37.7648],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-122.463, 37.7648]
+    },
+    "context": [
+      {
+        "id": "district.3872022703361910",
+        "wikidata": "Q62",
+        "text": "San Francisco"
+      },
+      {
+        "id": "region.9803118085738010",
+        "wikidata": "Q99",
+        "short_code": "US-CA",
+        "text": "California"
+      },
+      {
+        "id": "country.19678805456372290",
+        "wikidata": "Q30",
+        "short_code": "us",
+        "text": "United States"
+      }
+    ]
+  },
+  {
+    "id": "place.15797147722711380",
+    "type": "Feature",
+    "place_type": ["place"],
+    "relevance": 1,
+    "properties": {
+      "wikidata": "Q61301"
+    },
+    "text": "San Francisco De Campeche",
+    "place_name": "San Francisco De Campeche, Campeche, Mexico",
+    "bbox": [
+      -90.5865838964472, 19.792523418696, -90.4681014093499, 19.8763653229026
+    ],
+    "center": [-90.52528, 19.84861],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-90.52528, 19.84861]
+    },
+    "context": [
+      {
+        "id": "region.10700090649469160",
+        "wikidata": "Q80908",
+        "short_code": "MX-CAM",
+        "text": "Campeche"
+      },
+      {
+        "id": "country.9933875229773450",
+        "wikidata": "Q96",
+        "short_code": "mx",
+        "text": "Mexico"
+      }
+    ]
+  },
+  {
+    "id": "place.6734635062361910",
+    "type": "Feature",
+    "place_type": ["place"],
+    "relevance": 1,
+    "properties": {
+      "wikidata": "Q16628330"
+    },
+    "text": "San Francisco",
+    "place_name": "San Francisco, Zulia, Venezuela",
+    "bbox": [-71.758432, 10.519168, -71.608914, 10.615895],
+    "center": [-71.67651, 10.54875],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-71.67651, 10.54875]
+    },
+    "context": [
+      {
+        "id": "region.16267835172619380",
+        "wikidata": "Q43269",
+        "short_code": "VE-V",
+        "text": "Zulia"
+      },
+      {
+        "id": "country.8950424814360550",
+        "wikidata": "Q717",
+        "short_code": "ve",
+        "text": "Venezuela"
+      }
+    ]
+  },
+  {
+    "id": "poi.592705513773",
+    "type": "Feature",
+    "place_type": ["poi"],
+    "relevance": 1,
+    "properties": {
+      "foursquare": "41059b00f964a520850b1fe3",
+      "address": "N McDonnell Rd",
+      "wikidata": "Q8688",
+      "landmark": true,
+      "category": "airport",
+      "maki": "airport"
+    },
+    "text": "San Francisco International Airport (SFO)",
+    "place_name": "San Francisco International Airport (SFO), N McDonnell Rd, San Francisco, California 94128, United States",
+    "center": [-122.381047, 37.617801],
+    "geometry": {
+      "coordinates": [-122.381047, 37.617801],
+      "type": "Point"
+    },
+    "context": [
+      {
+        "id": "postcode.8070390524138280",
+        "text": "94128"
+      },
+      {
+        "id": "place.13229035407559250",
+        "wikidata": "Q62",
+        "text": "San Francisco"
+      },
+      {
+        "id": "district.4136415392199530",
+        "wikidata": "Q108101",
+        "text": "San Mateo County"
+      },
+      {
+        "id": "region.9803118085738010",
+        "wikidata": "Q99",
+        "short_code": "US-CA",
+        "text": "California"
+      },
+      {
+        "id": "country.19678805456372290",
+        "wikidata": "Q30",
+        "short_code": "us",
+        "text": "United States"
+      }
+    ]
+  },
+  {
+    "id": "place.5464395516267000",
+    "type": "Feature",
+    "place_type": ["place"],
+    "relevance": 1,
+    "properties": {
+      "wikidata": "Q1781109"
+    },
+    "text": "San Francisco Coacalco",
+    "place_name": "San Francisco Coacalco, México, Mexico",
+    "bbox": [
+      -99.1285116806486, 19.6103088790828, -99.0724699048157, 19.6640439404688
+    ],
+    "center": [-99.10417, 19.62889],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-99.10417, 19.62889]
+    },
+    "context": [
+      {
+        "id": "region.12430401993456720",
+        "wikidata": "Q82112",
+        "short_code": "MX-MEX",
+        "text": "México"
+      },
+      {
+        "id": "country.9933875229773450",
+        "wikidata": "Q96",
+        "short_code": "mx",
+        "text": "Mexico"
+      }
+    ]
+  }
+]

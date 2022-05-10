@@ -1,0 +1,10 @@
+{
+  "extends": "tsconfig/base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "experimentalDecorators": true
+  },
+  "include": ["./src"],
+  "exclude": ["node_modules", "lambda-layers-database", "dist"]
+}

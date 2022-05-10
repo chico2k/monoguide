@@ -1,0 +1,3 @@
+DATABASE_URL="mysql://root:test@localhost:3307/test"
+SHADOW_DATABASE_URL="mysql://root:test@localhost:3307/test_shadow"
+CLERK_API_KEY="test"

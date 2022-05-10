@@ -1,0 +1,6 @@
+mutation createUploadUrl($data: UploadResolverInput!) {
+  createUploadUrl(data: $data) {
+    signedUrl
+    fileKey
+  }
+}

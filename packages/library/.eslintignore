@@ -1,0 +1,8 @@
+/node_modules/
+dist/
+prisma
+yarn.lock
+.husky
+*.sh
+*.yml
+*lambda-layers-database

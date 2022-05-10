@@ -1,0 +1,26 @@
+{
+  "name": "eslint-config-guide",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "files": [
+    "eslint-config-server.js",
+    "index.js",
+    "babel.base.js"
+  ],
+  "exports": {
+    ".": "./eslint-config-server.js",
+    "./eslint-config-server": "./eslint-config-server.js"
+  },
+  "devDependencies": {
+    "eslint": "^8.8.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.1.1",
+    "eslint-plugin-markdown": "^2.2.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-config-next": "^12.0.8",
+    "eslint-config-prettier": "^8.3.0"
+  }
+}

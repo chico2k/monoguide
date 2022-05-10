@@ -1,0 +1,36 @@
+{
+  "name": "@sportsguide/graph",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "nodemon ./src/index.ts",
+    "build": "yarn tsc",
+    "lint": "eslint src --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sportsguide/auth": "workspace:*",
+    "@sportsguide/database": "workspace:*",
+    "@sportsguide/elastic": "workspace:*",
+    "@sportsguide/lib": "workspace:*",
+    "@sportsguide/webhook": "workspace:*",
+    "apollo-server-lambda": "^3.6.2",
+    "axios": "^0.24.0",
+    "class-validator": "^0.13.2",
+    "config": "workspace:*",
+    "cookies": "^0.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwk-to-pem": "^2.0.5",
+    "node-fetch": "^3.2.0",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1",
+    "typedi": "^0.10.0"
+  },
+  "devDependencies": {
+    "eslint-config-guide": "workspace:*",
+    "tsconfig": "workspace:*"
+  },
+  "baseUrl": ".",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts"
+}

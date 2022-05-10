@@ -1,0 +1,34 @@
+mutation createReview($data: ReviewInput!) {
+  createReview(data: $data) {
+    id
+    title
+    rating
+    author {
+      firstName
+      lastName
+      id
+    }
+  }
+}
+
+query getReviewList($username: String!) {
+  getReviewList(username: $username) {
+    took
+    hits {
+      hits {
+        _source {
+          id
+          title
+          text
+          rating
+          createdAt
+          author {
+            firstName
+            lastName
+            id
+          }
+        }
+      }
+    }
+  }
+}

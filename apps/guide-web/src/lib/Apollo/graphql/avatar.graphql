@@ -1,0 +1,6 @@
+mutation setExistingImageAsAvatar($imageId: Float!) {
+  setExistingImageAsAvatar(imageId: $imageId) {
+    blurBase64
+    url
+  }
+}

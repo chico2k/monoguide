@@ -1,0 +1,29 @@
+{
+  "name": "@sportsguide/elastic",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "repository": "https://github.com/chico2k/sg-es-layer.git",
+  "author": "Mario Galla",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon ./src/index.ts",
+    "build": "pnpm tsc",
+    "elastic": "ts-node ./src/cli/index.ts",
+    "lint": "eslint ./src --fix",
+    "test:unit": "jest unit"
+  },
+  "devDependencies": {
+    "@sportsguide/lib": "workspace:*",
+    "eslint-config-guide": "workspace:*",
+    "tsconfig": "workspace:*",
+    "@sportsguide/database": "workspace:*"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.15.0",
+    "commander": "^8.3.0",
+    "dotenv": "^10.0.0",
+    "ink": "^3.2.0",
+    "meow": "^10.1.1",
+    "react": "^17.0.2"
+  }
+}

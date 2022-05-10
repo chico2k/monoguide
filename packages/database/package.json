@@ -1,0 +1,29 @@
+{
+  "name": "@sportsguide/database",
+  "scripts": {
+    "dev": "nodemon ./src/index.ts",
+    "build": "yarn tsc",
+    "migrate:setup": "pnpm prisma migrate deploy && pnpm prisma db seed",
+    "lint": "eslint src --fix",
+    "test:unit": "jest unit",
+    "test:integration": "sh ./scripts/database-integration-test.sh"
+  },
+  "dependencies": {
+    "limax": "^3.0.0",
+    "@sportsguide/lib": "workspace:*",
+    "@sportsguide/auth": "workspace:*"
+  },
+  "devDependencies": {
+    "eslint-config-guide": "workspace:*",
+    "tsconfig": "workspace:*"
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "description": "Database Lib for Sportsguide ",
+  "author": "Mario Galla",
+  "license": "ISC",
+  "prisma": {
+    "seed": "npx ts-node ./prisma/seed.ts",
+    "schema": "./prisma/schema.prisma"
+  }
+}

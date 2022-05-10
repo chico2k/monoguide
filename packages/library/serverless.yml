@@ -1,0 +1,33 @@
+service: lib-layer
+frameworkVersion: '2.64'
+useDotenv: true
+variablesResolutionMode: 20210326
+configValidationMode: error
+
+custom:
+    stage: ${opt:stage, self:provider.stage}
+
+provider:
+    name: aws
+    region: us-east-1
+    stage: dev
+    runtime: nodejs14.x
+    lambdaHashingVersion: 20201221
+    environment:
+
+layers:
+    Lib:
+        path: ./lambda-layers-lib/
+        name: lib-${self:custom.stage}
+        description: 'Library with common helpers'
+        compatibleRuntimes:
+            - nodejs14.x
+        retain: false
+
+resources:
+    Outputs:
+        LibLayerExport:
+            Value:
+                Ref: LibLambdaLayer
+            Export:
+                Name: LibLambdaLayer-${self:custom.stage}

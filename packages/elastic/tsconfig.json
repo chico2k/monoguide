@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig/base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "."
+  },
+  "exclude": [
+    "node_modules",
+    "lambda-layers-database",
+    "dist",
+    "**/node_modules/**/*"
+  ]
+}

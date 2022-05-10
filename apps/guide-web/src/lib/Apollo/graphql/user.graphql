@@ -1,0 +1,88 @@
+fragment UserDetailAvatar on Avatar {
+  url
+  blurBase64
+}
+
+query getUserDetail($username: String!) {
+  getUserDetail(username: $username) {
+    userMeta {
+      hasReviewed
+      myUser
+    }
+    user {
+      id
+      firstName
+      lastName
+      username
+      isGuide
+      sport {
+        level
+        id
+        sportRef {
+          id
+          title
+        }
+      }
+      location {
+        id
+        placeName
+        text
+        countryText
+        regionText
+      }
+      avatar {
+        ...UserDetailAvatar
+      }
+    }
+  }
+}
+
+fragment UserListLocation on Location {
+  id
+  id
+  placeName
+  text
+  countryText
+  regionText
+}
+
+fragment UserListAvatar on Avatar {
+  url
+  blurBase64
+}
+
+fragment UserListReview on ReviewMeta {
+  averageRating
+  numberRating
+}
+
+query getUserList {
+  getUserList {
+    hits {
+      hits {
+        _index
+        _source {
+          id
+          firstName
+          lastName
+          username
+          isGuide
+          reviewMeta {
+            ...UserListReview
+          }
+          location {
+            ...UserListLocation
+          }
+          avatar {
+            ...UserListAvatar
+          }
+        }
+      }
+    }
+    took
+  }
+}
+
+query getCurrentUsername($userId: String!) {
+  getCurrentUsername(userId: $userId)
+}
