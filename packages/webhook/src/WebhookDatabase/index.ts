@@ -36,18 +36,36 @@ import type {
 import { Logger } from '@sportsguide/lib';
 import type { IEventTypesDatabase } from './types';
 import type { User } from '@prisma/client';
+import dotenv from 'dotenv';
+import path from 'path';
 
-const appId = 'app_22B4wkiZuVAeUN5gvUNOUGBaS1m';
-const secretSvix = 'testsk_oBsaMgAJWOkLCvhIaw7N1rvJvAkc_6O3';
 
-const secretEndpoiintDatabase = 'whsec_rkh1umkE2ikP4zuNf1rmewLhD4h3PFFO';
+const pathToEnv = path.join(
+  __dirname,
+  '..',
+  '..',
+  "..",
+  "..",
+  '.env'
+);
+
+dotenv.config({ path: pathToEnv });
+
+
+const appId = process.env.WH_AP_ID as string;
+const secretSvix = process.env.WH_SECRET as string;
+const secretEndpointDatabase = process.env.WH_KEY_DB as string;
+
+console.log("secretSvix", secretSvix)
+console.log("secretEndpointDatabase", secretEndpointDatabase)
+console.log("appId", appId)
 
 @Service()
 class WebhookDatabase implements IWebhookDatabase {
   constructor(
     private svix = new Svix(secretSvix),
-    private wh = new SvixWebhook(secretEndpoiintDatabase)
-  ) {}
+    private wh = new SvixWebhook(secretEndpointDatabase)
+  ) { }
 
   eventTypes: IEventTypesDatabase = {
     // User
@@ -101,7 +119,7 @@ class WebhookDatabase implements IWebhookDatabase {
       return false;
     }
   };
-  
+
   upatedUser = async (user: User): Promise<boolean> => {
     const payload: IUserDatabaseUpdated = {
       type: this.eventTypes['user.database.updated'],

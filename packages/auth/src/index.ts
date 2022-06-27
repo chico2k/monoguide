@@ -20,4 +20,5 @@ export const pathToEnv = path.join(
   'env',
   '.dev'
 );
+
 dotenv.config({ path: pathToEnv });

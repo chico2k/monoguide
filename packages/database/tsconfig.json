@@ -4,5 +4,8 @@
     "rootDir": ".",
     "outDir": "dist"
   },
-  "exclude": ["node_modules", ".turbo", "coverage", "dist", "src/**/*.test.ts"]
+  "exclude": ["node_modules", ".turbo", "coverage", "dist", "src/**/*.test.ts"],
+  "ts-node": {
+    "swc": true
+  }
 }

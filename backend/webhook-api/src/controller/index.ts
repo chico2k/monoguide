@@ -18,6 +18,7 @@ class OriginController {
     return response.status(400).json();
   };
 
+
   static execute = async (request: Request, response: Response) => {
     const origin = WebhookHandler.getRequestOrigin(request);
 

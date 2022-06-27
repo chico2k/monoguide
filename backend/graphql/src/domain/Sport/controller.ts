@@ -4,6 +4,7 @@ import { Container, Service } from 'typedi';
 import { SportService } from './service';
 import type { IContext } from "../../lib/apolloServer/types";
 import type { SportInput, SportUpdateInput } from './types';
+import type { IVerfiySessionSuccess } from '@sportsguide/auth';
 
 @Service()
 class SportController {

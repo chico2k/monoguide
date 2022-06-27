@@ -11,6 +11,7 @@ services:
       MYSQL_DATABASE: DEVELOPMENT
       MYSQL_USER: DEVELOPMENT
   elasticsearch:
+    container_name: elasticsearch
     image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3
     environment:
       - discovery.type=single-node
@@ -23,5 +24,12 @@ services:
       memlock:
         soft: -1
         hard: -1
-
-  
+  kibana:
+    container_name: kibana
+    image: docker.elastic.co/kibana/kibana:7.9.3
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    depends_on:
+      - elasticsearch
+    ports:
+      - 5601:5601

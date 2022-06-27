@@ -4,6 +4,7 @@
 /* eslint-disable no-var */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-namespace */
+import path from 'path';
 import dotenv from 'dotenv';
 import { Command } from 'commander';
 import { IndexDeploy } from '../IndexDeploy/index';
@@ -12,7 +13,17 @@ import { AliasHandler } from '../AliasHandler';
 import { ConfigHandler } from '../ConfigHandler';
 import { CLIHandler } from './CLIHandler';
 
-dotenv.config({ path: "'../../.env'" });
+const pathToEnv = path.join(
+  __dirname,
+  '..',
+  '..',
+  '..',
+  '..',
+  '.env'
+);
+
+dotenv.config({ path: pathToEnv });
+
 
 declare global {
   var es: any;

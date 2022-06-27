@@ -6,12 +6,28 @@ import type {
   SvixPayloadClerk,
 } from './types';
 import { Webhook as SvixWebhook } from 'svix';
+import dotenv from 'dotenv';
+import path from 'path';
 
-const secretEndpoiintClark = 'whsec_AFzDkbFmQMeRQAnjt/JALKNZTei0NKWE';
+/**
+ * Setup Environment
+ */
+const pathToEnv = path.join(
+  __dirname,
+  '..',
+  '..',
+  "..",
+  "..",
+  '.env'
+);
+dotenv.config({ path: pathToEnv });
+const secretEndpoiintClark = process.env.WH_KEY_CLERK as string
+
+
 
 @Service()
 class WebhookClerk implements IWebhookClerk {
-  constructor(private wh = new SvixWebhook(secretEndpoiintClark)) {}
+  constructor(private wh = new SvixWebhook(secretEndpoiintClark)) { }
 
   eventTypes: IEventTypesClark = {
     'user.created': 'user.created',

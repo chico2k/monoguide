@@ -35,6 +35,10 @@ export class Apollo {
       },
       schema,
       context: async ({ req, res }) => {
+
+        console.log("req", req)
+        console.log("req", req)
+        console.log("req", req)
         const auth = Container.get(AuthProvider);
         const verified = await auth.verifySession(req, res);
 

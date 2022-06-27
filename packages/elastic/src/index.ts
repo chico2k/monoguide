@@ -30,6 +30,7 @@ export { ReviewElasticMock } from './Index/Review/__mock__';
 /**
  * Image
  */
+
 export { ImageElastic } from './Index/Image';
 export type {
   IImageElastic,

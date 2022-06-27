@@ -9,5 +9,8 @@
     "lambda-layers-database",
     "dist",
     "**/node_modules/**/*"
-  ]
+  ],
+  "ts-node": {
+    "swc": true
+  }
 }

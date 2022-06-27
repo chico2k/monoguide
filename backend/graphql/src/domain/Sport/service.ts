@@ -20,7 +20,7 @@ export class SportService {
     private readonly sportDatabase: ISportDatabase,
     @Inject(ContainerInjection.containerNames.WEBHOOK_DATABASE)
     private readonly webhookDatabase: IWebhookDatabase
-  ) {}
+  ) { }
 
   createSportService = async (
     data: SportInput,

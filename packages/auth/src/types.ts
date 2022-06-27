@@ -19,11 +19,11 @@ export interface EmailAddress {
   verification: Verification;
 }
 
-export interface PrivateMetadata {}
+export interface PrivateMetadata { }
 
-export interface PublicMetadata {}
+export interface PublicMetadata { }
 
-export interface UnsafeMetadata {}
+export interface UnsafeMetadata { }
 
 export interface IUserAuth {
   birthday: string;
@@ -81,21 +81,25 @@ export type ITokenPayload = {
   publicMeta: any;
 };
 
-export type IVerfiySessionOuput = IVerfiySessionSuccess | IVerfiySessionFail;
+export type IVerfiySessionOuput = {
+  authenticated: boolean;
+  payload?: ITokenPayload
+  helper?: IConttextHelper
+}
+
+
 export type IVerfiySessionSuccess = {
   authenticated: boolean;
-  payload: ITokenPayload;
+  payload: ITokenPayload
+  helper: IConttextHelper
 };
-export type IVerfiySessionFail = { authenticated: boolean; payload: undefined };
+
 
 export type IContext = {
-  auth: IVerfiySessionSuccess & IContextHelper;
+  auth: IVerfiySessionSuccess & IConttextHelper;
 };
 
-export type IContextHelper = {
-  /**
-   * Helper to return the User Id
-   */
+export type IConttextHelper = {
   getUserId: () => string;
 };
 

@@ -5,7 +5,6 @@ import { Logger } from '@sportsguide/lib';
 import { Service } from 'typedi';
 import type { User } from '@prisma/client';
 import jwt, { GetPublicKeyOrSecret } from 'jsonwebtoken';
-
 import axios from 'axios';
 import NodeCache from 'node-cache';
 import type { ResolverData, NextFn } from 'type-graphql';
@@ -15,9 +14,12 @@ import type {
   IVerfiySessionOuput,
   IContext,
   ITokenPayload,
-  IAuthKeys
+  IAuthKeys,
+  IVerfiySessionSuccess
 } from './types';
 import Cookies from 'cookies';
+import { AuthHelper } from './AuthHelper';
+
 
 const Cache = new NodeCache();
 
@@ -99,6 +101,7 @@ class AuthProvider implements IAuth {
     return next();
   }
 
+
   verifySession = async (
     req: Request,
     res: Response
@@ -110,7 +113,6 @@ class AuthProvider implements IAuth {
       if (!req.headers?.authorization && !clientToken)
         return {
           authenticated: false,
-          payload: undefined
         };
 
       const token = clientToken ? clientToken : req.headers.authorization;
@@ -122,7 +124,6 @@ class AuthProvider implements IAuth {
       if (!decodedJwt || !decodedJwt.header.kid)
         return {
           authenticated: false,
-          payload: undefined
         };
 
       const {
@@ -139,19 +140,15 @@ class AuthProvider implements IAuth {
         pubblicKeys
       ) as unknown as ITokenPayload;
 
-      console.log('result', {
-        authenticated: true,
-        payload
-      });
+
       return {
         authenticated: true,
-        payload
+        payload,
+        helper: AuthHelper.contextHelper
       };
     } catch (err) {
-      console.log('err from mid', err);
       return {
         authenticated: false,
-        payload: undefined
       };
     }
   };

@@ -1,7 +1,23 @@
 {
   "extends": "tsconfig/base.json",
   "compilerOptions": {
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "strict": true /* Enable all strict type-checking options. */,
+    "strictNullChecks": true /* Enable strict null checks. */,
+    "declaration": false,
+    "declarationMap": false,
   },
-  "exclude": ["node_modules", "lambda-layers-database", "dist"]
+  "paths": {
+    "@trpc/server/*": [
+      "../../../node_modules/@trpc/server/*"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "lambda-layers-database",
+    "dist"
+  ],
+  "ts-node": {
+    "swc": true
+  }
 }

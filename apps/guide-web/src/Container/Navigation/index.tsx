@@ -3,8 +3,6 @@
 import React from 'react';
 import { Disclosure } from '@headlessui/react';
 import { useRouter } from 'next/router';
-import { useContext } from 'react';
-import { Context } from '../../lib/Store/AppContext';
 import NavigationUser from './NavigationUser';
 import NavigationHamburger from './NavigationSmall/indesx';
 import NavigationNotifications from './NavigationNotifications';

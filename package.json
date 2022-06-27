@@ -13,7 +13,11 @@
   ],
   "scripts": {
     "elastic": "ts-node ./packages/elastic/src/cli/index.ts",
+    "prepare": "pnpm elastic template:update & pnpm elastic index:create & pnpm db:setup",
     "db:migrate": "pnpm prisma migrate deploy",
+    "db:setup": "pnpm prisma migrate deploy && pnpm prisma db seed",
+    "infra:docker": "docker-compose -f ./infra/docker/docker-compose.yml up --build",
+    "infra:wb": "svix listen http://localhost:4001/webhook",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
@@ -79,6 +83,7 @@
     "@clerk/clerk-sdk-node": "^3.4.0",
     "@clerk/nextjs": "^2.0.1",
     "@prisma/client": "^3.13.0",
+    "@swc/core": "^1.2.181",
     "@types/body-parser": "^1.19.2",
     "@types/express": "^4.17.13",
     "apollo-server": "^3.7.0",
@@ -96,7 +101,6 @@
     "limax": "^3.0.0",
     "next": "^12.1.6",
     "node-cache": "^5.1.2",
-    "node-fetch": "^3.2.4",
     "prisma": "^3.13.0",
     "react": "^18.1.0",
     "reflect-metadata": "^0.1.13",
@@ -107,7 +111,7 @@
     "winston": "^3.7.2"
   },
   "prisma": {
-    "seed": "npx ts-node ./packages/prisma/seed.ts",
+    "seed": "npx ts-node ./packages/database/prisma/seed.ts",
     "schema": "./packages/database/prisma/schema.prisma"
   }
 }

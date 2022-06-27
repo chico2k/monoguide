@@ -1,8 +1,5 @@
 import { useRouter } from 'next/router';
-import { Auth } from 'aws-amplify';
 import { useSignUp } from '@clerk/nextjs';
-import { redirect } from 'next/dist/server/api-utils';
-import { redirectURL } from '../../../lib/HOC/redirectHOC';
 
 interface IValues {
   email: string;
@@ -10,21 +7,29 @@ interface IValues {
   name: string;
 }
 
+
 const useRegister = () => {
   const router = useRouter();
 
-  const { signUp } = useSignUp();
+  const { signUp , isLoaded} = useSignUp();
+
+
 
   const useRegisterHandler = async ({ email, password, name }: IValues) => {
+
+    if(!isLoaded) return 
+
     try {
-      signUp.create({
+      const singUp =  await signUp.create({
         firstName: name,
         lastName: name,
         emailAddress: email,
         password
       });
 
-      const resp = await signUp.prepareVerification({
+      console.log("singUp", singUp)
+
+      const resp = await signUp.prepareEmailAddressVerification({
         strategy: 'email_link',
         redirectUrl: 'http://localhost:3002/auth/register/success'
       });
